@@ -1,8 +1,9 @@
 import React from "react";
 import "./simpleRoute.css"
-import { Switch, Route , NavLink } from "react-router-dom"
+import { Switch, Route , NavLink ,  useParams } from "react-router-dom"
 import AppRouter from "./config/Router"
 const App = () => {
+ 
     return (
         <>
         <div className="header">
