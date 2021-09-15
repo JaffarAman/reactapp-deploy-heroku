@@ -1,31 +1,38 @@
 import React from "react";
-import "./simpleRoute.css"
-import { Switch, Route , NavLink ,  useParams } from "react-router-dom"
-import AppRouter from "./config/Router"
-const App = () => {
- 
-    return (
-        <>
-        <div className="header">
-            <NavLink exact className="navLinks" activeClassName="navLink"  to="/">HOME</NavLink>
-            <NavLink exact className="navLinks" activeClassName="navLink" to="/about">ABOUT US</NavLink>
-            <NavLink exact className="navLinks" activeClassName="navLink" to="/contact">CONTACT US</NavLink>
-            
+import Home from "./component/Home"
+import Login from "./component/Login"
+import Protective from "./config/Protective"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
-        </div>
-            
-            <div>
-                <AppRouter />
-            </div>
-            
+const App = ()=>{
+    return <>
+    <Router>
+        {/* <Link to="/">HOME</Link>
+        <Link to="login">LOGIN</Link> */}
+        <Switch>
+{/* 
+            <Route exact path="/"  >
+                <Home />
+            </Route> */}
 
-        <div className="footer" >
-            <small>CopyRights &copy; All Right Reserved</small>
+            <Protective exact component={Home} path="/"  />
 
-        </div>
+            <Route exact path="/login"  >
+                <Login />
+            </Route>
+          
 
-        </>
-    )
+        </Switch>
+
+
+    </Router>
+   
+    
+    </>
 }
-
 export default App
