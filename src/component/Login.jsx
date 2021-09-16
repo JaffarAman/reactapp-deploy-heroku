@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import "./login.css"
 import LoginPic from "../img/login.png"
-import InputField from "./TextField"
-import  InputAdornments from "./PasswordTextField"
+import { useHistory } from "react-router";
 const Login = ()=>{
    const [email, setEmail] = useState("")
    const [password, setPassword] = useState(null)
-   const login = ()=>{
+    const history = useHistory()
+    if(localStorage.getItem("user")){
+            history.push("/")
+    }
+    const login = ()=>{
        console.log("hello")
        const obj ={
            email,
            password
        }
        localStorage.setItem("user",JSON.stringify(obj))
-   }
+       console.log(history.location.pathname)
+       history.replace("/")
+    }
    console.log(email)
    return <>
-        <div className="mainBox">
+        <div className="mainBoxxs">
 
         <div className="logInBox">
 
@@ -26,8 +31,9 @@ const Login = ()=>{
             </div>
             <div className="loginForm">
                 <h3>LOGIN</h3>
-                <InputField />
-                <InputAdornments />
+                    <input type="text" onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Email" />
+                    <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" />
+                    <button onClick={login}>LOGIN</button>
             </div>
 
 
