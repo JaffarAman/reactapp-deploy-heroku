@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formSearch{
+    width: 100%;
+    padding: 12px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.formSearch input{
+    max-width:300px;
+    margin: 15px;
+    padding: 8px;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-family: cursive;
+    font-size: large;
+}
+
+
+.userCardBOx{
+    margin: 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:10px;
+}
+.userCardBOx li{
+    border-bottom: 1px solid black;
+    list-style: none;
+    margin: 8px 0;
+}
+.userCardBOx h5{
+    text-align: center;
+}
+
+.darkIcon i{
+        color:white;
+        border:1px solid white;
+        /* background-color:white; */
+        padding:8px;
+        width:50px;
+        border-radius:8px;
+    }
+
+
+.errorPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}    
