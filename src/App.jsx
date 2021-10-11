@@ -3,7 +3,8 @@ import React from 'react'
 const App = () => {
     return (
         <div>
-                hello world
+     
+                <h1>REACT JS APP DEPLOY ON HEROKU</h1>
         </div>
     )
 }
