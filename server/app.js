@@ -31,8 +31,8 @@ app.get("/**" , (req,res)=>{
     res.sendFile(path.join(__dirname , "../build/index.html"))
 })
 
-app.use((res,req,next)=>{
-    res.redirect("<h1>404 page not found</h1>")
-})
+// app.use((res,req,next)=>{
+//     res.redirect("<h1>404 page not found</h1>")
+// })
 
 app.listen(PORT , ()=>console.log(`server is running on localhost${PORT}`))
