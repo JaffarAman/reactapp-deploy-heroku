@@ -8,28 +8,29 @@ const path = require("path")
 ////IS FILE KO CHALANA HAI / path pr ///
 app.use("/" , express.static(path.join(__dirname, '../build')))
 
-app.get("/create" , (req,res)=>{
+app.get("/api/v1/create" , (req,res)=>{
         res.send("<h1>Create GET Request SuccessFully RUn</h1>")
 })
 
 
-app.post("/create" , (req,res)=>{
+app.post("/api/v1/create" , (req,res)=>{
     res.send("<h1>Create POST Request SuccessFully RUn</h1>")
 })
 
 
-app.put("/create" , (req,res)=>{
+app.put("/api/v1/create" , (req,res)=>{
     res.send("<h1>Create UPDATE Request SuccessFully RUn</h1>")
 })
 
 
-app.delete("/create" , (req,res)=>{
+app.delete("/api/v1/create" , (req,res)=>{
     res.send("<h1>Create Delete Request SuccessFully RUn</h1>")
 })
 
 app.get("/**" , (req,res)=>{
-    res.sendFile(path.join(__dirname , "../build/index.html"))
-})
+    // res.sendFile(path.join(__dirname , "../build/index.html"))
+    res.redirect("/")
+    })
 
 // app.use((res,req,next)=>{
 //     res.redirect("<h1>404 page not found</h1>")
